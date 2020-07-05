@@ -8,7 +8,10 @@
 import scrapy
 
 
-class GragieldowaItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+class Order(scrapy.Item):
+    exchange_rate = scrapy.Field()
+    volume = scrapy.Field()
+    value = scrapy.Field()
+    count = scrapy.Field()
+    share = scrapy.Field()
+
