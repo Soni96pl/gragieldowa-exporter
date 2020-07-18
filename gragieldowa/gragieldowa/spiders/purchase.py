@@ -6,7 +6,10 @@ from gragieldowa.items import Order
 class PurchaseSpider(scrapy.Spider):
     name = 'purchase'
     allowed_domains = ['gragieldowa.pl']
-    start_urls = ['https://gragieldowa.pl/spolka_arkusz_zl/spolka/FW20U2020/typ/0']
+
+    def __init__(self, stock=None):
+        self.stock = stock or 'FW20U2020'
+        self.start_urls = ['https://gragieldowa.pl/spolka_arkusz_zl/spolka/%s/typ/0' % stock]
 
     def parse(self, response):
         table = response.selector.xpath("//table[contains(@class, 'data maintable')]")[0]

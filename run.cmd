@@ -1,1 +1,1 @@
-bash run.sh
+bash run.sh %1
